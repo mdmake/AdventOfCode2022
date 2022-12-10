@@ -48,19 +48,14 @@ def partTwo(filename: str):
             else:
                 _, var = line.strip().split()
 
-                if abs(cycle % LEN - x) < 2:
-                    newline[cycle % LEN] = '#'
-                cycle += 1
-                if cycle % LEN == 0:
-                    print(''.join(newline))
-                    newline = baseline.copy()
+                for _ in range(2):
+                    if abs(cycle % LEN - x) < 2:
+                        newline[cycle % LEN] = '#'
 
-                if abs(cycle % LEN - x) < 2:
-                    newline[cycle % LEN] = '#'
-                cycle += 1
-                if cycle % LEN == 0:
-                    print(''.join(newline))
-                    newline = baseline.copy()
+                    cycle += 1
+                    if cycle % LEN == 0:
+                        print(''.join(newline))
+                        newline = baseline.copy()
 
                 x += int(var)
 
