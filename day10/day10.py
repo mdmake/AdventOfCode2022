@@ -14,14 +14,10 @@ def partOne(filename: str):
 
             else:
                 _, var = line.strip().split()
-
-                cycle += 1
-                if cycle in ticks:
-                    rez += cycle * x
-
-                cycle += 1
-                if cycle in ticks:
-                    rez += cycle * x
+                for _ in range(2):
+                    cycle += 1
+                    if cycle in ticks:
+                        rez += cycle * x
 
                 x += int(var)
 
